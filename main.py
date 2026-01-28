@@ -150,14 +150,17 @@ st.subheader('Close vs EMA20 and SMA20')
 fig_ma = go.Figure()
 
 fig_ma.add_trace(go.Scatter(
+    x=df.index,
     y=df['Close'],
     mode='lines', name='Close Price'
 ))
 fig_ma.add_trace(go.Scatter(
+    x=df.index,
     y=df['SMA_20'],
     mode='lines', name='SMA 20'
 ))
 fig_ma.add_trace(go.Scatter(
+    x=df.index,
     y=df['EMA_20'],
     mode='lines', name='EMA 20'
 ))
@@ -177,6 +180,7 @@ st.subheader("📉 RSI Indicator")
 fig_rsi = go.Figure()
 
 fig_rsi.add_trace(go.Scatter(
+    x=df.index,
     y=df['RSI_14'],
     mode='lines', name='RSI'
 ))
@@ -197,14 +201,17 @@ st.subheader("📊 Bollinger Bands")
 fig_bb = go.Figure()
 
 fig_bb.add_trace(go.Scatter(
+    x=df.index,
     y=df['Close'],
     mode='lines', name='Close Price'
 ))
 fig_bb.add_trace(go.Scatter(
+    x=df.index,
     y=df['BB_Upper'],
     mode='lines', name='Upper Band'
 ))
 fig_bb.add_trace(go.Scatter(
+    x=df.index,
     y=df['BB_Lower'],
     mode='lines', name='Lower Band'
 ))
@@ -226,10 +233,12 @@ strategy = (1 + df['Strategy_Returns']).cumprod()
 fig_perf = go.Figure()
 
 fig_perf.add_trace(go.Scatter(
+    x=df.index,
     y=market,
     mode='lines', name='Market Returns'
 ))
 fig_perf.add_trace(go.Scatter(
+    x=df.index,
     y=strategy,
     mode='lines', name='Strategy Returns'
 ))
